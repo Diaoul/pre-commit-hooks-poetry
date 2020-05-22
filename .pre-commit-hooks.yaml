@@ -1,7 +1,7 @@
 - id: poetry-export
   name: Poetry Export
   description: Prevent desync between poetry and requirements.txt
-  entry: pre_commit_hooks/export.sh
+  entry: pre_commit_hooks.export:main
   language: python
   types: [text]
   files: ^requirements\.txt$
