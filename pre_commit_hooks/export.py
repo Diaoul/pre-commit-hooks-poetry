@@ -30,17 +30,18 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("filename", help="Filename to check.")
     args = parser.parse_args(argv)
 
-    poetry = Factory.create_poetry()
+    poetry = Factory().create_poetry(os.getcwd())
     exporter = Exporter(poetry)
-    exporter.export(
-        fmt="requirements.txt",
-        cwd=os.getcwd(),
-        output=args.filename,
-        with_hashes=not args.without_hashes,
-        dev=args.dev,
-        extras=args.extras,
-        with_credentials=args.with_credentials,
-    )
+    with open(args.filename, "w") as req:
+        exporter.export(
+            fmt="requirements.txt",
+            cwd=None,
+            output=req,
+            with_hashes=not args.without_hashes,
+            dev=args.dev,
+            extras=args.extras,
+            with_credentials=args.with_credentials,
+        )
 
 
 if __name__ == "__main__":
