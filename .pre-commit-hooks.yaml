@@ -1,0 +1,7 @@
+- id: poetry-export
+  name: Poetry Export
+  description: Prevent desync between poetry and requirements.txt
+  entry: poetry-export
+  language: python
+  pass_filenames: false
+  args: ["--format", "requirements.txt"]
