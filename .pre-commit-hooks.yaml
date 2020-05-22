@@ -2,7 +2,7 @@
   name: Poetry Export
   description: Prevent desync between poetry and requirements.txt
   entry: pre_commit_hooks/export.sh
-  language: script
+  language: python
   types: [text]
   files: ^requirements\.txt$
   additional_dependencies: [poetry]
