@@ -5,3 +5,4 @@
   language: script
   types: [text]
   files: ^requirements\.txt$
+  additional_dependencies: [poetry]
