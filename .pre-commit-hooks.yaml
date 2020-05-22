@@ -4,4 +4,4 @@
   entry: pre_commit_hooks/export.sh
   language: script
   types: [text]
-  files: ^requirements.txt$
+  files: ^requirements\.txt$
