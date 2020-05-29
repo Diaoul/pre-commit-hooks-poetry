@@ -27,6 +27,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         action="store_true",
         help="Include credentials for extra indices.",
     )
+    parser.add_argument(
+        "--project-directory",
+        action="store",
+        help="Directory which includes the pyproject.toml file.",
+    )
     parser.add_argument("filename", help="Filename to check.")
     args = parser.parse_args(argv)
 
@@ -35,7 +40,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     with open(args.filename, "w") as req:
         exporter.export(
             fmt="requirements.txt",
-            cwd=None,
+            cwd=args.project_directory,
             output=req,
             with_hashes=not args.without_hashes,
             dev=args.dev,
