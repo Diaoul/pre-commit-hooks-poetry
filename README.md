@@ -1,8 +1,11 @@
 # pre-commit-hooks-poetry
 My personnal poetry-related pre-commit hooks
 
-## poetry-export
+## poetry-export - DEPRECATED
 Prevent desync between poetry and `requirements.txt`.
+
+**DEPRECATION NOTICE:** See https://github.com/python-poetry/poetry/issues/2457
+for better implementations.
 
 Usage:
 ```yaml
